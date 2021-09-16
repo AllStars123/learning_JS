@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var sum1 = 10 + 10 + "10"
+    var sum2 = 10 + "10" + 10
+    var sum3 = 10 + 10 + +"10"
+    var sum4 = 10 / -""
+    var sum5 = 10 / +"2,5"
+    alert(sum1) // 2010
+    alert(sum2) // 101010
+    alert(sum3) // 30
+    alert(sum4) // -infinity
+    alert(sum5) // NaN
+    /*
+    1. 2010  Сначала сложил 10 + 10 , а потом дописал 10
+    2. 101010 Написал 10(int), написал 10(string), написал 10(int)
+    3. 30 Второй плюс првратил из str в int
+    4. -infinity неизвестное значение
+    5. NaN не число, т.е мы int делим на char
+     */
+</script>
+</body>
+</html>
