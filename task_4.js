@@ -1,26 +1,41 @@
-// Реализовать основные 4 арифметические операции (+, -, /, *) в виде функций с двумя
-// параметрами. Т.е. например, функция для сложения должна принимать два числа, складывать их
-// и возвращать результат.
-// Обязательно использовать оператор return
-
-function addition(num_1, num_2) {
-    return num_1 + num_2;
-}
-
-function subtraction(num_1, num_2) {
-    return num_1 - num_2;
-}
-
-function multiplication(num_1, num_2) {
-    return num_1 * num_2;
-}
-
-function division(num_1, num_2) {
-    return num_1 / num_2;
-}
+// Перед вами находится массив с продуктами в интернет-магазине. Вам нужно:
+//     1 Получить все товары, у которых есть фотографии, можете использовать метод filter https://mzl.la/2qROQkT
+//     2 Отсортируйте товары по цене (от низкой цены к высокой), можете использовать метод sort
+// https://mzl.la/2Y79hbZ , как устроен sort можно посмотреть например здесь https://youtu.be/O2pusOp0gC0 или в
+//     дополнительных видео в материалах урока.
 
 
-a = addition(2, 2); // 4
-b = subtraction(10, 4); // 6
-c = multiplication(3, 10);  // 30
-d = division(12, 3); // 4
+const products = [
+    {
+        id: 3,
+        price: 127,
+        photos: [
+            "1.jpg",
+            "2.jpg",
+        ]
+    },
+    {
+        id: 5,
+        price: 499,
+        photos: []
+    },
+    {
+        id: 10,
+        price: 26,
+        photos: [
+            "3.jpg"
+        ]
+    },
+    {
+        id: 8,
+        price: 78,
+    },
+];
+
+const filter_photos = products.filter(item => 'photos' in item && item.photos.length > 0)
+console.log(filter_photos)
+
+const sort_price = products.sort(function (item_1,item_2){
+    return item_1.price - item_2.price
+})
+console.log(sort_price)
